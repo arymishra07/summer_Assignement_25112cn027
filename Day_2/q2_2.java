@@ -2,25 +2,21 @@ import java.util.Scanner;
 
 public class ReverseNumber {
     
-    // Method to reverse a number
     public static int reverseNumber(int num) {
         int reversed = 0;
         int temp = num;
         
-        // Handle negative numbers
         boolean isNegative = num < 0;
         if (isNegative) {
             temp = Math.abs(num);
         }
         
-        // Reverse the number
         while (temp > 0) {
-            int digit = temp % 10;           // Extract last digit
-            reversed = reversed * 10 + digit; // Add digit to reversed number
-            temp = temp / 10;                 // Remove last digit
+            int digit = temp % 10;
+            reversed = reversed * 10 + digit;
+            temp = temp / 10;
         }
         
-        // Return with negative sign if input was negative
         return isNegative ? -reversed : reversed;
     }
     
